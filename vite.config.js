@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GitHub Pages のプロジェクトページ(https://<user>.github.io/task-board/)用
+// 独自ドメイン(tasks.equine-vet-tsuchiya.com)のルートで公開するため base は '/'
 export default defineConfig({
-  base: '/task-board/',
   plugins: [react()],
 })

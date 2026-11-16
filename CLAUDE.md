@@ -28,7 +28,8 @@
 - `src/main.jsx` : エントリーポイント
 - `src/App.jsx` : アプリ本体(現状は単一コンポーネント)
 - `src/App.css` : スタイル
-- `vite.config.js` : Vite設定(`base: '/task-board/'`)
+- `vite.config.js` : Vite設定
+- `public/CNAME` : GitHub Pages の独自ドメイン設定
 
 ## コンポーネントの命名規約
 
@@ -43,10 +44,11 @@
 
 ## デプロイ先
 
-https://takeru20170719.github.io/task-board/
+https://tasks.equine-vet-tsuchiya.com/
 
-- GitHub Pages に公開する。`main` にプッシュすると GitHub Actions が自動でビルド&デプロイする。
-- Vite の `base` は `/task-board/` に設定済み。リポジトリ名を変える場合は `vite.config.js` も合わせて変更する。
+- GitHub Pages に独自ドメインで公開する。`main` にプッシュすると GitHub Actions が自動でビルド&デプロイする。
+- ドメイン指定は `public/CNAME` で行う。ドメインを変える場合はこのファイルと、GitHub の Settings → Pages の Custom domain、DNS の CNAME を合わせて変更する。
+- 独自ドメインのルートで公開するため、Vite の `base` は既定値(`/`)のまま。
 
 ## 開発ルール
 
