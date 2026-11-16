@@ -1,9 +1,32 @@
-// 物件一覧のダミーデータ
-export const PROPERTIES = [
-  { id: 1, name: 'サンライズ渋谷', rent: 128000, area: '東京都渋谷区' },
-  { id: 2, name: 'グリーンコート新宿', rent: 98000, area: '東京都新宿区' },
-  { id: 3, name: 'リバーサイド横浜', rent: 85000, area: '神奈川県横浜市' },
-  { id: 4, name: 'メゾン梅田', rent: 72000, area: '大阪府大阪市北区' },
-  { id: 5, name: 'ハーバービュー神戸', rent: 79000, area: '兵庫県神戸市中央区' },
-  { id: 6, name: 'パークサイド札幌', rent: 55000, area: '北海道札幌市中央区' },
-]
+import { supabase } from './supabase'
+
+// propertiesテーブルのCRUD操作。
+// 「自分の物件のみ」の絞り込みはSupabase側のRLSポリシーが行う。
+
+// 一覧取得(新しい順)
+export async function fetchProperties() {
+  const { data, error } = await supabase
+    .from('properties')
+    .select('*')
+    .order('created_at', { ascending: false })
+  if (error) throw error
+  return data
+}
+
+// 新規登録(user_id はDBのデフォルト値で自動設定される)
+export async function createProperty(values) {
+  const { error } = await supabase.from('properties').insert(values)
+  if (error) throw error
+}
+
+// 更新
+export async function updateProperty(id, values) {
+  const { error } = await supabase.from('properties').update(values).eq('id', id)
+  if (error) throw error
+}
+
+// 削除
+export async function deleteProperty(id) {
+  const { error } = await supabase.from('properties').delete().eq('id', id)
+  if (error) throw error
+}
