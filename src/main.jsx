@@ -1,10 +1,10 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './App.css'
+import RealEstateApp from './RealEstateApp.jsx'
+import './RealEstateApp.css'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RealEstateApp />
   </React.StrictMode>
 )

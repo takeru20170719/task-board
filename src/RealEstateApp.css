@@ -1,0 +1,31 @@
+body { margin: 0; background: #f4f6f8; font-family: sans-serif; color: #222; }
+.loading { text-align: center; margin-top: 4rem; }
+
+/* ログイン・会員登録 */
+.auth-page { display: flex; justify-content: center; padding: 4rem 1rem; }
+.auth-form { background: #fff; padding: 2rem; border-radius: 8px; width: 100%; max-width: 360px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1); display: flex; flex-direction: column; gap: 1rem; }
+.auth-form h1 { margin: 0; font-size: 1.4rem; text-align: center; }
+.auth-form label { display: flex; flex-direction: column; gap: .3rem; font-size: .9rem; }
+.auth-form input { padding: .6rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+.auth-form button { padding: .7rem; border: none; border-radius: 4px; background: #2563eb;
+  color: #fff; font-size: 1rem; cursor: pointer; }
+.auth-form button:disabled { opacity: .6; cursor: default; }
+.auth-form .error { color: #c62828; margin: 0; font-size: .9rem; }
+.auth-form .info { color: #2e7d32; margin: 0; font-size: .9rem; }
+.auth-form .switch { margin: 0; text-align: center; font-size: .9rem; }
+
+/* 物件一覧 */
+.property-page { max-width: 960px; margin: 0 auto; padding: 1rem; }
+.page-header { display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: .5rem; }
+.user-area { display: flex; align-items: center; gap: .8rem; font-size: .9rem; }
+.user-area button { padding: .4rem .9rem; border: 1px solid #999; border-radius: 4px;
+  background: #fff; cursor: pointer; }
+.property-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem; margin-top: 1rem; }
+.property-card { background: #fff; padding: 1.2rem; border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1); }
+.property-card h2 { margin: 0 0 .6rem; font-size: 1.1rem; }
+.property-card .rent { margin: 0; font-size: 1.3rem; font-weight: bold; color: #2563eb; }
+.property-card .area { margin: .4rem 0 0; color: #666; }
